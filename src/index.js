@@ -8,12 +8,15 @@ import { Provider } from "react-redux";
 import rootReducer from "./modules";
 import ReduxThunk from "redux-thunk";
 import logger from "redux-logger";
+import { BrowserRouter } from "react-router-dom";
 //logger을 사용하는 경우 logger가 가장 뒤에 와야한다.
 const store = createStore(rootReducer, applyMiddleware(ReduxThunk, logger));
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <BrowserRouter>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </BrowserRouter>,
   document.getElementById("root")
 );
 
