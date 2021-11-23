@@ -1,13 +1,14 @@
 import "./App.css";
-import { Routes, Route } from "react-router";
+import { Route } from "react-router";
 import PostListPage from "./pages/PostListPage";
 import PostPage from "./pages/PostPage";
+import { BrowserRouter } from "react-router-dom";
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<PostListPage />} exact={true} />
-      <Route path="/:id" element={<PostPage />} />
-    </Routes>
+    <BrowserRouter>
+      <Route path="/" component={PostListPage} exact={true} />
+      <Route path="/:id" component={PostPage} />
+    </BrowserRouter>
   );
 }
 
